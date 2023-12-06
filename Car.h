@@ -18,10 +18,10 @@ struct Car {
     string car_class;
     int car_weight;
 
-    Car (Driver* driver, Engine* engine, string car_model, string car_class, int car_weight){
+    void Init (string last_name,string first_name,string surname,int experience, int power, string manufacturer, string car_model, string car_class, int car_weight){
 
-        this -> driver = driver;
-        this -> engine = engine;
+        this -> driver = new Driver(last_name, first_name, surname, experience);
+        this -> engine = new Engine(power, manufacturer);
         this -> car_model = car_model;
         this -> car_class = car_class;
         this -> car_weight = car_weight;
@@ -52,9 +52,9 @@ struct Car {
 
     void PrintCarInfo (){
 
+        cout << driver->ToString() << endl;
         cout << ToString() << endl;
         cout << engine->ToString() << endl;
-        cout << driver->ToString() << endl;
 
     }
 
