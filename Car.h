@@ -18,30 +18,30 @@ struct Car {
     string car_class;
     int car_weight;
 
-    void Init (string last_name,string first_name,string surname,int experience, int power, string manufacturer, string car_model, string car_class, int car_weight){
+    Car (Driver* driver, Engine* engine, string car_model, string car_class, int car_weight){
 
-        this -> driver = new Driver(last_name, first_name, surname, experience);
-        this -> engine = new Engine(power, manufacturer);
+        this -> driver = driver;
+        this -> engine = engine;
         this -> car_model = car_model;
         this -> car_class = car_class;
         this -> car_weight = car_weight;
 
     }
 
-    string Start(){
-        return "Ok, let's go!";
+    void Start(){
+        cout << "Ok, let's go!" << endl;
     }
 
-    string Stop(){
-        return "Stop!";
+    void Stop(){
+        cout << "Stop!" << endl;
     }
 
-    string TurnRight(){
-        return "Turn right!";
+    void TurnRight(){
+        cout << "Turn right!" << endl;
     }
 
-    string TurnLeft(){
-        return "Turn left!";
+    void TurnLeft(){
+        cout << "Turn left!" << endl;
     }
 
     string ToString (){
@@ -58,12 +58,12 @@ struct Car {
 
     }
 
-    ~Car(){
+    /*~Car(){
 
         delete driver;
         delete engine;
 
-    }
+    }*/
 
 
 };
